@@ -28,8 +28,30 @@ DELETE  /recipe/:recipeID           controllers.RecipeController.deleteRecipe(re
 
 
 
-GET     /author/:authorID           controllers.AuthorController.retrieveAuthor(authorID)
 
-GET     /authors                    controllers.AuthorController.getAuthors
+
+POST    /user                       controllers.UserController.createUser
+
+GET     /user/:dni                  controllers.UserController.retrieveUser(dni)
+
+PUT     /user/:dni                  controllers.UserController.updateUser(dni)
+
+DELETE  /user/:dni                  controllers.UserController.deleteUser(dni)
+
+GET     /users/:page                controllers.UserController.getUserCollection(page: Integer)
+
+GET     /users                      controllers.UserController.getUsersFiltered()
+
+
+
+
+
+POST    /user/:dni/resetAPIKey      controllers.APIkeyController.resetAPIkey(dni)
+
+POST    /user/:dni/resetPassword/:password    controllers.PasswordController.resetPassword(dni, password)
+
+
+
+
 
 
