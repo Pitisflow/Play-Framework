@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class Password extends BaseModel{
 
     @Constraints.Required
+    @validators.Password
     private String password;
     private boolean active;
 
@@ -22,6 +23,10 @@ public class Password extends BaseModel{
 
     public Password() {
 
+    }
+
+    public Password(@Constraints.Required String password) {
+        this.password = password;
     }
 
 

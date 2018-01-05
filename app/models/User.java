@@ -176,6 +176,21 @@ public class User extends BaseModel{
     }
 
 
+    public void generateNewPassword(String password)
+    {
+        Password pw = new Password();
+
+        pw.setPassword(password);
+        pw.setActive(true);
+        pw.setUser(this);
+
+        this.passwords.add(pw);
+
+        pw.save();
+        this.update();
+    }
+
+
 
     public void generateAPIkey()
     {
