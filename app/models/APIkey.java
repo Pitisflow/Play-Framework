@@ -19,7 +19,7 @@ public class APIkey extends BaseModel{
     private static final String alphanum = upper + lower + digits;
 
 
-    
+
     private String APIKey;
     private boolean active;
 
@@ -35,6 +35,17 @@ public class APIkey extends BaseModel{
     public APIkey() {
 
     }
+
+
+    public static APIkey checkActiveAPIkey(String apiKey)
+    {
+        return find.query()
+                .where()
+                .eq("APIKey", apiKey)
+                .eq("active", true)
+                .findOne();
+    }
+
 
     public static String generateAPIkey() {
         StringBuilder sb = new StringBuilder(15);

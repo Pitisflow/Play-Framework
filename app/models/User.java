@@ -191,6 +191,15 @@ public class User extends BaseModel{
     }
 
 
+    public void generateNewAPIkey()
+    {
+        this.apIkey.setAPIKey(APIkey.generateAPIkey());
+        this.apIkey.setActive(true);
+
+        this.apIkey.update();
+    }
+
+
 
     public void generateAPIkey()
     {
