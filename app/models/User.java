@@ -6,8 +6,11 @@ import io.ebean.Ebean;
 import io.ebean.Finder;
 import io.ebean.PagedList;
 import io.ebean.annotation.JsonIgnore;
+import org.hibernate.validator.constraints.Email;
 import play.data.validation.Constraints;
 import play.libs.Json;
+import validators.DNI;
+import validators.Username;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -27,15 +30,18 @@ public class User extends BaseModel{
     private String surname;
 
     @Constraints.Required
+    @Username
     private String username;
 
     @Constraints.Required
+    @Email
     private String email;
     private int age;
 
 
     @JsonIgnore
     @Constraints.Required
+    @DNI
     private String dni;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -168,6 +174,7 @@ public class User extends BaseModel{
 
         pw.save();
     }
+
 
 
     public void generateAPIkey()
