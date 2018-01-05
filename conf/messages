@@ -1,0 +1,7 @@
+existent_user = The user already exists
+
+invalid_username = The format of the username entered is wrong! (Symbols and spaces not admitted)
+
+invalid_password = The format of the password entered is wrong! (Must have at least an uppercase, a lowercase, a number and a length of 8 characters)
+
+invalid_dni = The NIF/NIE entered is not valid!
