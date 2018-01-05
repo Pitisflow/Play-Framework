@@ -55,3 +55,9 @@ POST    /user/:dni/resetPassword/:password    controllers.PasswordController.res
 
 
 
+
+POST    /login/:dni                 controllers.SessionController.login(dni)
+
+POST    /logout/:dni                controllers.SessionController.logout(dni)
+
+
