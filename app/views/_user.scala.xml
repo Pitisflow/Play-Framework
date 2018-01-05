@@ -1,0 +1,10 @@
+@(user: User)
+
+<user>
+    <id>@user.getId()</id>
+    <name>@user.getName()</name>
+    <surname>@user.getSurname()</surname>
+    <username>@user.getUsername()</username>
+    <age>@user.getAge()</age>
+    <email>@user.getEmail()</email>
+</user>

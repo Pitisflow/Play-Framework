@@ -1,0 +1,9 @@
+@(users: List[User])
+
+@_header()
+
+<users>
+    @for(user <- users) {
+        @_user(user)
+    }
+</users>
