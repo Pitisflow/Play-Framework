@@ -32,15 +32,21 @@ DELETE  /recipe/:recipeID           controllers.RecipeController.deleteRecipe(re
 
 POST    /user                       controllers.UserController.createUser
 
-GET     /user/:id                   controllers.UserController.retrieveUser(id: Integer)
-
 PUT     /user/:dni                  controllers.UserController.updateUser(dni)
 
 DELETE  /user/:dni                  controllers.UserController.deleteUser(dni)
 
-GET     /users/:page                controllers.UserController.getUserCollection(page: Integer)
 
-GET     /users                      controllers.UserController.getUsersFiltered()
+
+
+
+GET     /author/:id                 controllers.AuthorController.retrieveAuthor(id: Integer)
+
+GET     /authors/:page              controllers.AuthorController.getAuthorCollection(page: Integer)
+
+GET     /authors                    controllers.AuthorController.getAuthorsFiltered()
+
+
 
 
 
