@@ -36,9 +36,9 @@ public class UserController extends Controller{
     }
 
 
-    public Result retrieveUser(String dni)
+    public Result retrieveUser(Integer id)
     {
-        User user = User.findByDni(dni);
+        User user = User.findById(id.intValue());
 
         if (user == null) return Results.notFound();
 

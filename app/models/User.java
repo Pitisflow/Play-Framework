@@ -72,6 +72,15 @@ public class User extends BaseModel{
     }
 
 
+    public static User findById(int id)
+    {
+        return find.query()
+                .where()
+                .eq("id", id)
+                .findUnique();
+    }
+
+
     public static PagedList<User> findBySurname(String surname, int page, int pageSize)
     {
         return find.query()

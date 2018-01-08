@@ -32,7 +32,7 @@ DELETE  /recipe/:recipeID           controllers.RecipeController.deleteRecipe(re
 
 POST    /user                       controllers.UserController.createUser
 
-GET     /user/:dni                  controllers.UserController.retrieveUser(dni)
+GET     /user/:id                   controllers.UserController.retrieveUser(id: Integer)
 
 PUT     /user/:dni                  controllers.UserController.updateUser(dni)
 
