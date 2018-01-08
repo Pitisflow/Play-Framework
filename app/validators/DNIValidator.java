@@ -7,11 +7,11 @@ import play.mvc.Http;
 
 import javax.validation.ConstraintValidator;
 
-public class DNIValidator extends Constraints.Validator<String> implements ConstraintValidator<Password, String> {
+public class DNIValidator extends Constraints.Validator<String> implements ConstraintValidator<DNI, String> {
 
 
     @Override
-    public void initialize(Password constraintAnnotation) {
+    public void initialize(DNI constraintAnnotation) {
 
     }
 
