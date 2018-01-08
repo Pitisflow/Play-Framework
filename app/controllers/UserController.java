@@ -95,7 +95,7 @@ public class UserController extends Controller{
     public Result getUsersFiltered(){
         PagedList<User> usersList;
 
-        String usernameFilter = request().getQueryString("username");
+        String nickFilter = request().getQueryString("nick");
         String nameFilter = request().getQueryString("name");
         String surnameFilter = request().getQueryString("surname");
 
@@ -113,8 +113,8 @@ public class UserController extends Controller{
 
 
 
-        if (usernameFilter != null) {
-            usersList = User.findByUsername(usernameFilter, page, pageSize);
+        if (nickFilter != null) {
+            usersList = User.findByNick(nickFilter, page, pageSize);
         }
         else if (nameFilter != null && surnameFilter != null) {
             usersList = User.findByCompleteName(nameFilter, surnameFilter, page, pageSize);

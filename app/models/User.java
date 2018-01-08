@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Email;
 import play.data.validation.Constraints;
 import play.libs.Json;
 import validators.DNI;
-import validators.Username;
+import validators.Nick;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -30,8 +30,8 @@ public class User extends BaseModel{
     private String surname;
 
     @Constraints.Required
-    @Username
-    private String username;
+    @Nick
+    private String nick;
 
     @Constraints.Required
     @Email
@@ -116,11 +116,11 @@ public class User extends BaseModel{
     }
 
 
-    public static PagedList<User> findByUsername(String username, int page, int pageSize)
+    public static PagedList<User> findByNick(String username, int page, int pageSize)
     {
         return find.query()
                 .where()
-                .like("username", username + "%")
+                .like("nick", username + "%")
                 .setMaxRows(pageSize)
                 .setFirstRow(pageSize*page)
                 .findPagedList();
@@ -279,12 +279,12 @@ public class User extends BaseModel{
         this.surname = surname;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNick() {
+        return nick;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 
     public String getDni() {

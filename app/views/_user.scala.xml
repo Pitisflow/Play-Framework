@@ -4,7 +4,7 @@
     <id>@user.getId()</id>
     <name>@user.getName()</name>
     <surname>@user.getSurname()</surname>
-    <username>@user.getUsername()</username>
+    <nick>@user.getNick()</nick>
     <age>@user.getAge()</age>
     <email>@user.getEmail()</email>
 </user>

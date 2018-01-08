@@ -8,11 +8,11 @@ import play.mvc.Http;
 import javax.validation.ConstraintValidator;
 import java.util.Scanner;
 
-public class UsernameValidator extends Constraints.Validator<String> implements ConstraintValidator<Username, String> {
+public class NickValidator extends Constraints.Validator<String> implements ConstraintValidator<Nick, String> {
 
 
     @Override
-    public void initialize(Username constraintAnnotation) {
+    public void initialize(Nick constraintAnnotation) {
 
     }
 
@@ -30,6 +30,6 @@ public class UsernameValidator extends Constraints.Validator<String> implements 
         Messages messages = Http.Context.current().messages();
 
         return new F.Tuple<String, Object[]>(
-                messages.at("invalid_username"), new Object[]{""});
+                messages.at("invalid_nick"), new Object[]{""});
     }
 }
